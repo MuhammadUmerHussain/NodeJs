@@ -1,0 +1,21 @@
+
+//import file stream
+let fs=require("fs");
+
+// writing file
+ fs.writeFileSync("read.txt","Welcome To My World");
+
+//appending file
+ fs.appendFileSync("read.txt"," Umer is Crazy Bro!");
+
+
+ //reading  file and store at buffer
+let buf=fs.readFileSync("read.txt");
+
+
+//converting buffer to string 
+
+let org=buf.toString();
+//console.log(org);
+//renameing file
+fs.renameSync("read.txt","Syn.txt");

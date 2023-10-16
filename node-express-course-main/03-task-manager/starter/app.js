@@ -3,10 +3,12 @@ const app=express()
 const connectDb=require('./db/database')
 require('dotenv').config()
 const task=require('./routes/task')
+const errorHandler=require('./middleware/error-handle')
 app.use(express.json())
 
 app.use(express.static('./public'))
 app.use('/api/v1/tasks',task)
+app.use(errorHandler)
 const port=4000
 
 

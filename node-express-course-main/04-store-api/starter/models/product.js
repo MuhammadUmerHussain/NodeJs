@@ -14,18 +14,17 @@ const productSchema = new mongoose.Schema({
     default: false,
   },
   rating: {
-    tye: Number,
+    type: Number,
     default: 4.5,
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
   company: {
-    enum: {
-      value: ["ikea", "liddy", "caressa", "marcos"],
-      message: "{VALUE} is not supported",
-    },
+    type: String,
+    enum: ["ikea", "liddy", "caressa", "marcos"],
+    // The enum field defines allowed values; you don't need a message here.
   },
 });
 

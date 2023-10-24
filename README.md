@@ -21,3 +21,5 @@ Below image is of controller where login in public route so i am setting up my t
 next() will call dashboard where i have return lucky number.
 ![image](https://github.com/MuhammadUmerHussain/NodeJs/assets/108338561/e9c062ec-32eb-4867-abb9-152e66b56099)
 
+Read More? https://jwt.io/introduction hit this link.
+

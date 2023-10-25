@@ -1,11 +1,11 @@
 const { sign, verify } = require("jsonwebtoken");
 const jwt = require("jsonwebtoken");
 const CustomAPIError = require("../errors/custom-error");
-
+const UnauthenticatedError = require("../errors");
 const authMiddleware = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    throw new CustomAPIError("Authorization Error ");
+    throw new UnauthenticatedError("Authorization Error ");
   }
 
   const removeBearer = authHeader.split(" ")[1];
@@ -16,7 +16,7 @@ const authMiddleware = async (req, res, next) => {
     req.user = { id, username };
     next();
   } catch (err) {
-    throw new CustomAPIError("Authorization Error ");
+    throw new UnauthenticatedError("Authorization Error ");
   }
 };
 

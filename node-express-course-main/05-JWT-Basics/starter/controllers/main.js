@@ -1,12 +1,12 @@
 const { sign, verify } = require("jsonwebtoken");
 const jwt = require("jsonwebtoken");
-const CustomAPIError = require("../errors/custom-error");
+const badRequest = require("../errors/badRequest");
 
 const login = async (req, res) => {
   const { username, password } = req.body;
   console.log(req.body);
   if (!username || !password) {
-    throw new CustomAPIError("Invalid credentials", 400);
+    throw new badRequest("Invalid credentials");
   }
   console.log("umer");
   const id = new Date().getDate(); // Use 'const' to declare 'id'
